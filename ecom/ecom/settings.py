@@ -18,7 +18,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load our environmental variables
-load_dotenv()
+#load_dotenv()
 
 # password DB
 DB_PASSWORD_YO = os.environ['DB_PASSWORD_YO']
@@ -33,10 +33,8 @@ SECRET_KEY = 'django-insecure-z^a*$_ccxi8pjz+$v)h*c+h-d=3ec01l+g4&j@hsr_m#ngq87=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-ecommerce-production-7fc0.up.railway.app', 'https://django-ecommerce-production-7fc0.up.railway.app']
-CSRF_TRUSTED_ORIGINS = [ 'https://django-ecommerce-production-7fc0.up.railway.app']
-
-
+ALLOWED_HOSTS = ['django-ecommerce-production-3a02.up.railway.app','https://django-ecommerce-production-3a02.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['django-ecommerce-production-3a02.up.railway.app','https://django-ecommerce-production-3a02.up.railway.app']
 
 # Application definition
 

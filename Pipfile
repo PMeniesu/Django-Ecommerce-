@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 pillow = "*"
 python-dotenv = "*"
+psycopg2 = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 

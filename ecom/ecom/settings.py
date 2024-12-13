@@ -18,10 +18,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load our environmental variables
-#load_dotenv()
+load_dotenv()
 
-# password DB
-DB_PASSWORD_YO = os.environ['DB_PASSWORD_YO']
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,8 +31,9 @@ SECRET_KEY = 'django-insecure-z^a*$_ccxi8pjz+$v)h*c+h-d=3ec01l+g4&j@hsr_m#ngq87=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-ecommerce-production-3a02.up.railway.app','https://django-ecommerce-production-3a02.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://django-ecommerce-production-3a02.up.railway.app']
+ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = []
+
 
 # Application definition
 
@@ -49,6 +48,8 @@ INSTALLED_APPS = [
     'cart',
     'payment',
     'whitenoise.runserver_nostatic',
+
+   
 
 ]
 
@@ -68,7 +69,7 @@ ROOT_URLCONF = 'ecom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS':[],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,7 +96,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': os.environ['DB_PASSWORD_YO'],
+        'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
         'HOST': 'junction.proxy.rlwy.net',
         'PORT': '36711',
         
@@ -143,6 +144,9 @@ STATICFILES_DIRS=['static/']
 # White noise static stuff
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
